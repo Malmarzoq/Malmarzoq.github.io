@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مالمرزوق - الموقع الشخصي</title>
+    <title>محمد المرزوق - مهندس شبكات</title>
     <style>
         * {
             margin: 0;
@@ -14,13 +14,13 @@
         
         body {
             font-family: 'Arial', 'Tahoma', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             min-height: 100vh;
             color: #333;
         }
         
         .container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 40px 20px;
         }
@@ -30,41 +30,84 @@
             border-radius: 20px;
             padding: 50px;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
             margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #1e3c72, #2a5298, #ff6b6b);
         }
         
         .profile-image {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
             margin: 0 auto 30px;
+            border: 5px solid #f8f9fa;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            background: #ddd;
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 60px;
-            color: white;
+            font-size: 48px;
+            color: #666;
             font-weight: bold;
         }
         
         h1 {
-            color: #2c3e50;
+            color: #1e3c72;
             font-size: 2.5em;
             margin-bottom: 10px;
+            font-weight: 700;
         }
         
         .subtitle {
-            color: #7f8c8d;
-            font-size: 1.2em;
+            color: #2a5298;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .location {
+            color: #666;
+            font-size: 1.1em;
             margin-bottom: 30px;
         }
         
         .bio {
             color: #555;
             font-size: 1.1em;
-            line-height: 1.6;
+            line-height: 1.8;
             margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #555;
+            font-size: 0.95em;
         }
         
         .links {
@@ -75,47 +118,139 @@
         }
         
         .link-btn {
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
             color: white;
-            padding: 12px 25px;
+            padding: 15px 30px;
             text-decoration: none;
-            border-radius: 25px;
-            transition: transform 0.3s;
-            font-weight: bold;
+            border-radius: 30px;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 1em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
         .link-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(30, 60, 114, 0.3);
         }
         
         .section {
             background: white;
             border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 20px;
+            padding: 40px;
+            margin-bottom: 25px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
         .section h2 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 1.8em;
+            color: #1e3c72;
+            margin-bottom: 25px;
+            font-size: 2em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
-        .skills {
+        .experience-item {
+            border-right: 4px solid #2a5298;
+            padding-right: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+        }
+        
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .job-title {
+            color: #1e3c72;
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .company {
+            color: #2a5298;
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .duration {
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+        }
+        
+        .experience-description {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .achievements {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .achievements li {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            padding-right: 20px;
+            position: relative;
+        }
+        
+        .achievements li::before {
+            content: '▸';
+            color: #2a5298;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #e9ecef;
+            text-align: center;
+        }
+        
+        .skill-category h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .skill-list {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 15px;
             margin-top: 20px;
         }
         
-        .skill-item {
+        .cert-item {
             background: #f8f9fa;
-            padding: 15px;
+            padding: 15px 20px;
             border-radius: 10px;
-            text-align: center;
-            border: 2px solid #e9ecef;
+            border-right: 4px solid #2a5298;
+            font-weight: 600;
+            color: #1e3c72;
         }
         
         footer {
@@ -123,6 +258,10 @@
             color: white;
             margin-top: 50px;
             font-size: 0.9em;
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
         }
         
         @media (max-width: 768px) {
@@ -138,68 +277,215 @@
                 font-size: 2em;
             }
             
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
             .links {
                 flex-direction: column;
                 align-items: center;
+            }
+            
+            .section {
+                padding: 25px 20px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Profile Section -->
         <div class="profile-card">
-            <div class="profile-image">
-                م
+            <div class="profile-image">م.م</div>
+            <h1>محمد المرزوق</h1>
+            <p class="subtitle">مهندس شبكات أول</p>
+            <p class="location">📍 الرياض، المملكة العربية السعودية</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    📞 <span>+966 570 136 239</span>
+                </div>
+                <div class="contact-item">
+                    📧 <span>m.almarzoq@gmail.com</span>
+                </div>
             </div>
-            <h1>مرحباً، أنا مالمرزوق</h1>
-            <p class="subtitle">مطور ومبرمج</p>
+            
             <p class="bio">
-                أهلاً وسهلاً بكم في موقعي الشخصي! أنا مهتم بالتقنية والبرمجة، وأحب تعلم أشياء جديدة وتطوير مشاريع مفيدة.
-                هذا الموقع مساحة لمشاركة أعمالي وأفكاري معكم.
+                مهندس شبكات محترف مع أكثر من 12 عاماً من الخبرة في تصميم وتنفيذ وإدارة البنية التحتية للشبكات. 
+                متخصص في تقنيات Cisco وأمان الشبكات، مع خبرة واسعة في قيادة الفرق التقنية وتنفيذ المشاريع المعقدة 
+                في القطاع العسكري والحكومي.
             </p>
+            
             <div class="links">
-                <a href="mailto:your.email@example.com" class="link-btn">📧 راسلني</a>
-                <a href="https://github.com/Malmarzoq" class="link-btn">💻 GitHub</a>
-                <a href="#" class="link-btn">🔗 LinkedIn</a>
+                <a href="mailto:m.almarzoq@gmail.com" class="link-btn">
+                    📧 راسلني
+                </a>
+                <a href="https://github.com/Malmarzoq" class="link-btn" target="_blank">
+                    💻 GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/mohammedaalmarzouq/" class="link-btn" target="_blank">
+                    🔗 LinkedIn
+                </a>
             </div>
         </div>
         
+        <!-- Experience Section -->
         <div class="section">
-            <h2>🚀 عني</h2>
-            <p>أنا شخص مهتم بعالم التقنية والتطوير، أحب تعلم لغات البرمجة الجديدة وإنشاء مشاريع تفيد المجتمع. أؤمن بأن التقنية يمكنها حل الكثير من المشاكل وتسهيل حياتنا اليومية.</p>
+            <h2>💼 الخبرة المهنية</h2>
+            
+            <div class="experience-item">
+                <div class="job-title">مهندس شبكات أول</div>
+                <div class="company">القوات الجوية الملكية السعودية - قسم هندسة الشبكات</div>
+                <div class="duration">أكتوبر 2010 - يوليو 2022</div>
+                <div class="experience-description">
+                    قيادة وإدارة فريق البنية التحتية للشبكات لضمان كفاءة عمليات النظام والشبكة
+                </div>
+                <ul class="achievements">
+                    <li>تصميم وتنفيذ البنية التحتية للشبكات السلكية واللاسلكية بناءً على احتياجات العملاء ومعايير الصناعة</li>
+                    <li>مراقبة وإدارة حركة الشبكة لضمان الأداء الأمثل وتوفر الخدمة باستخدام أدوات مثل Cisco Works LMS</li>
+                    <li>تنفيذ وإدارة جدران الحماية القوية وأنظمة كشف/منع التسلل والبروتوكولات الأمنية</li>
+                    <li>تطوير وتنفيذ أفضل الممارسات لتكوينات الشبكة وسياسات الأمان والأتمتة</li>
+                    <li>تنفيذ التطويرات التقنية بما في ذلك SD-WAN والحلول المعتمدة على السحابة</li>
+                    <li>إنشاء التقارير والوثائق لأداء الشبكة وتقييمات الأمان وتغييرات البنية التحتية</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="job-title">قائد مشروع - الترحيل إلى Catalyst 6500</div>
+                <div class="company">القوات الجوية الملكية السعودية</div>
+                <div class="experience-description">
+                    تصميم وتنفيذ هندسة Cisco Catalyst 6500 Virtual Switching System (VSS) لتحسين القابلية للتوسع والتكرار وأداء الشبكة
+                </div>
+                <ul class="achievements">
+                    <li>ترحيل ودمج البنية التحتية للشبكة عبر 8 مناطق بنجاح مع ضمان التواصل السلس</li>
+                    <li>تعزيز أمان الشبكة وتحمل الأخطاء من خلال توزيع الأحمال الفعال وآليات التبديل التلقائي</li>
+                    <li>تقديم الوثائق التفصيلية والتدريب لفريق تقنية المعلومات</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="job-title">قائد مشروع - تحسين الشبكة اللاسلكية</div>
+                <div class="company">القوات الجوية الملكية السعودية</div>
+                <ul class="achievements">
+                    <li>ترقية أنظمة Aruba Wireless Network، مما زاد الإنتاجية ورضا المستخدمين بنسبة 25%</li>
+                    <li>تكوين وتحسين البنية التحتية اللاسلكية لضمان التغطية الشاملة والاتصال عالي الأداء</li>
+                    <li>تنفيذ بروتوكولات الأمان المتقدمة وتدابير التحكم في الوصول للشبكات اللاسلكية</li>
+                </ul>
+            </div>
         </div>
         
+        <!-- Skills Section -->
         <div class="section">
-            <h2>💡 اهتماماتي</h2>
-            <div class="skills">
-                <div class="skill-item">
-                    <strong>تطوير المواقع</strong>
-                    <p>HTML, CSS, JavaScript</p>
+            <h2>🛠️ المهارات التقنية</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>تقنيات الشبكات</h3>
+                    <div class="skill-list">
+                        Cisco Technologies<br>
+                        Routing & Switching<br>
+                        SD-WAN<br>
+                        VPN Solutions<br>
+                        Network Design
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <strong>البرمجة</strong>
-                    <p>Python, Java, C++</p>
+                <div class="skill-category">
+                    <h3>الأمان السيبراني</h3>
+                    <div class="skill-list">
+                        Firewalls & NGFW<br>
+                        Network Security<br>
+                        Intrusion Detection<br>
+                        Security Protocols<br>
+                        Threat Mitigation
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <strong>التصميم</strong>
-                    <p>UI/UX Design</p>
+                <div class="skill-category">
+                    <h3>التقنيات اللاسلكية</h3>
+                    <div class="skill-list">
+                        Aruba Wireless<br>
+                        WiFi Optimization<br>
+                        Wireless Security<br>
+                        Coverage Planning<br>
+                        Performance Monitoring
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <strong>قواعد البيانات</strong>
-                    <p>MySQL, MongoDB</p>
+                <div class="skill-category">
+                    <h3>أدوات المراقبة</h3>
+                    <div class="skill-list">
+                        Cisco Works LMS<br>
+                        Network Analyzers<br>
+                        Performance Monitoring<br>
+                        Traffic Analysis<br>
+                        SLA Management
+                    </div>
                 </div>
             </div>
         </div>
         
+        <!-- Certifications Section -->
         <div class="section">
-            <h2>📫 تواصل معي</h2>
-            <p>أحب التواصل مع الأشخاص المهتمين بالتقنية، لا تتردد في مراسلتي إذا كان لديك أي سؤال أو تريد التعاون في مشروع ما.</p>
+            <h2>🎓 الشهادات والدورات</h2>
+            <div class="certifications">
+                <div class="cert-item">CCNA (Cisco Certified Network Associate)</div>
+                <div class="cert-item">ICDN1 & ICDN2</div>
+                <div class="cert-item">Cisco Voice and Unified Communications</div>
+                <div class="cert-item">VoIP and QoS Implementation</div>
+                <div class="cert-item">Cisco Works LMS Administration</div>
+                <div class="cert-item">ARUBA Advanced Wireless Network</div>
+                <div class="cert-item">McAfee Email Gateway System Admin</div>
+                <div class="cert-item">Forcepoint Stonesoft NGFW Administrator</div>
+                <div class="cert-item">Cisco Firepower Threat Defense</div>
+            </div>
+        </div>
+        
+        <!-- Education Section -->
+        <div class="section">
+            <h2>🎓 التعليم</h2>
+            <div class="experience-item">
+                <div class="job-title">دبلوم مشارك في تقنية الشبكات</div>
+                <div class="company">كلية الاتصالات والمعلومات - الرياض</div>
+            </div>
+        </div>
+        
+        <!-- Projects Section -->
+        <div class="section">
+            <h2>🚀 المشاريع المميزة</h2>
+            
+            <div class="experience-item">
+                <div class="job-title">تنفيذ نظام المؤتمرات المرئية</div>
+                <div class="experience-description">
+                    تصميم وتنفيذ حل شامل للمؤتمرات المرئية باستخدام أنظمة Cisco Codec
+                </div>
+                <ul class="achievements">
+                    <li>تعزيز الاتصال عبر 10 غرف اجتماعات</li>
+                    <li>تكوين وتحسين أجهزة المؤتمرات المرئية والبنية التحتية للشبكة</li>
+                    <li>التكامل مع البنية التحتية الحالية لتقنية المعلومات</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="job-title">اتصال المواقع النائية عبر الأقمار الصناعية</div>
+                <div class="experience-description">
+                    تصميم وتنفيذ حل VPN آمن باستخدام موجهين متصلين عبر رابط القمر الصناعي
+                </div>
+                <ul class="achievements">
+                    <li>ضمان الاتصال الموثوق مع المقر الرئيسي</li>
+                    <li>تكوين وتحسين الاتصال القائم على الأقمار الصناعية</li>
+                    <li>ضمان نقل البيانات الآمن من خلال التشفير وتكوينات أنفاق VPN</li>
+                </ul>
+            </div>
         </div>
     </div>
     
     <footer>
-        <p>&copy; 2025 مالمرزوق. جميع الحقوق محفوظة.</p>
-        <p>تم إنشاء هذا الموقع باستخدام GitHub Pages</p>
+        <p><strong>محمد المرزوق</strong> - مهندس شبكات محترف</p>
+        <p>&copy; 2025 جميع الحقوق محفوظة</p>
+        <p>🌐 تم إنشاء هذا الموقع باستخدام GitHub Pages</p>
     </footer>
 </body>
 </html>
