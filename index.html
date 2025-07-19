@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مالمرزوق - الموقع الشخصي</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', 'Tahoma', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .profile-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        
+        .bio {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .link-btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: transform 0.3s;
+            font-weight: bold;
+        }
+        
+        .link-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .skill-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 10px;
+            }
+            
+            .profile-card {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <div class="profile-image">
+                م
+            </div>
+            <h1>مرحباً، أنا مالمرزوق</h1>
+            <p class="subtitle">مطور ومبرمج</p>
+            <p class="bio">
+                أهلاً وسهلاً بكم في موقعي الشخصي! أنا مهتم بالتقنية والبرمجة، وأحب تعلم أشياء جديدة وتطوير مشاريع مفيدة.
+                هذا الموقع مساحة لمشاركة أعمالي وأفكاري معكم.
+            </p>
+            <div class="links">
+                <a href="mailto:your.email@example.com" class="link-btn">📧 راسلني</a>
+                <a href="https://github.com/Malmarzoq" class="link-btn">💻 GitHub</a>
+                <a href="#" class="link-btn">🔗 LinkedIn</a>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🚀 عني</h2>
+            <p>أنا شخص مهتم بعالم التقنية والتطوير، أحب تعلم لغات البرمجة الجديدة وإنشاء مشاريع تفيد المجتمع. أؤمن بأن التقنية يمكنها حل الكثير من المشاكل وتسهيل حياتنا اليومية.</p>
+        </div>
+        
+        <div class="section">
+            <h2>💡 اهتماماتي</h2>
+            <div class="skills">
+                <div class="skill-item">
+                    <strong>تطوير المواقع</strong>
+                    <p>HTML, CSS, JavaScript</p>
+                </div>
+                <div class="skill-item">
+                    <strong>البرمجة</strong>
+                    <p>Python, Java, C++</p>
+                </div>
+                <div class="skill-item">
+                    <strong>التصميم</strong>
+                    <p>UI/UX Design</p>
+                </div>
+                <div class="skill-item">
+                    <strong>قواعد البيانات</strong>
+                    <p>MySQL, MongoDB</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📫 تواصل معي</h2>
+            <p>أحب التواصل مع الأشخاص المهتمين بالتقنية، لا تتردد في مراسلتي إذا كان لديك أي سؤال أو تريد التعاون في مشروع ما.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 مالمرزوق. جميع الحقوق محفوظة.</p>
+        <p>تم إنشاء هذا الموقع باستخدام GitHub Pages</p>
+    </footer>
+</body>
+</html>
